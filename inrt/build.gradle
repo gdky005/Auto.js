@@ -119,4 +119,6 @@ dependencies {
     implementation project(':automator')
     implementation project(':common')
     implementation project(':autojs')
+
+    implementation 'com.blankj:utilcodex:1.31.1'
 }

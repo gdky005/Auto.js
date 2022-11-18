@@ -7,6 +7,8 @@ import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.blankj.utilcode.util.ToastUtils
+
 
 import com.stardust.auojs.inrt.autojs.AutoJs
 import com.stardust.auojs.inrt.launch.GlobalProjectLauncher
@@ -21,6 +23,9 @@ class LogActivity : AppCompatActivity() {
         if (intent.getBooleanExtra(EXTRA_LAUNCH_SCRIPT, false)) {
             GlobalProjectLauncher.launch(this)
         }
+
+        ToastUtils.showShort("测试消息哦")
+
     }
 
     private fun setupView() {
