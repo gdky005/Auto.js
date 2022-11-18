@@ -19,6 +19,7 @@ import com.stardust.auojs.inrt.launch.GlobalProjectLauncher
 import java.util.ArrayList
 
 import android.content.pm.PackageManager.PERMISSION_DENIED
+import com.stardust.auojs.inrt.wq.WQActivity
 
 /**
  * Created by Stardust on 2018/2/2.
@@ -52,7 +53,8 @@ class SplashActivity : AppCompatActivity() {
                 e.printStackTrace()
                 runOnUiThread {
                     Toast.makeText(this@SplashActivity, e.message, Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this@SplashActivity, LogActivity::class.java))
+//                    startActivity(Intent(this@SplashActivity, LogActivity::class.java))
+                    startActivity(Intent(this@SplashActivity, WQActivity::class.java))
                     AutoJs.instance!!.globalConsole.printAllStackTrace(e)
                 }
             }

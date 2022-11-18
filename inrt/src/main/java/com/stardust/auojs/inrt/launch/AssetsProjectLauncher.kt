@@ -11,6 +11,7 @@ import com.stardust.auojs.inrt.BuildConfig
 import com.stardust.auojs.inrt.LogActivity
 import com.stardust.auojs.inrt.Pref
 import com.stardust.auojs.inrt.autojs.AutoJs
+import com.stardust.auojs.inrt.wq.WQActivity
 import com.stardust.autojs.engine.encryption.ScriptEncryption
 import com.stardust.autojs.execution.ExecutionConfig
 import com.stardust.autojs.execution.ScriptExecution
@@ -48,13 +49,13 @@ open class AssetsProjectLauncher(private val mAssetsProjectDir: String, private 
         } else {
             //如果不隐藏日志界面
             //如果当前已经是日志界面则直接运行脚本
-            if (activity is LogActivity) {
+            if (activity is WQActivity) {
                 runScript(null)
             } else {
                 //否则显示日志界面并在日志界面中运行脚本
                 mHandler.post {
-                    activity.startActivity(Intent(mActivity, LogActivity::class.java)
-                            .putExtra(LogActivity.EXTRA_LAUNCH_SCRIPT, true))
+                    activity.startActivity(Intent(mActivity, WQActivity::class.java)
+                            .putExtra(WQActivity.EXTRA_LAUNCH_SCRIPT, true))
                     activity.finish()
                 }
             }
